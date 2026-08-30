@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+
+# Generated output (regenerate with `make demo`)
+out/
+
+# Challenge media -- large; see README before committing
+*.mp4
+*.mov
+
+# LaTeX report
+build/
+main.pdf
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
