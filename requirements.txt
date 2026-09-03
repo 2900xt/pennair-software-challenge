@@ -1,4 +1,4 @@
-# Dependencies are declared in pyproject.toml; this file is kept for
-# environments that expect it.
 opencv-python>=4.8
 numpy>=1.24
+matplotlib>=3.7
+ipykernel>=6.29

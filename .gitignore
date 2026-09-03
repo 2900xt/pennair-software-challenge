@@ -2,23 +2,12 @@
 __pycache__/
 *.py[cod]
 .venv/
-*.egg-info/
-.pytest_cache/
 
-# Generated output (regenerate with `make demo`)
+# Generated output
 out/
 
-# Challenge media -- large; see README before committing
+# Challenge media -- large; the static PNG is committed, the videos are not
 *.mp4
 *.mov
 
-# LaTeX report
-build/
-main.pdf
-*.aux
-*.log
-*.out
-*.toc
-*.fls
-*.fdb_latexmk
-*.synctex.gz
+docs
