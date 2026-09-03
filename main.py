@@ -15,6 +15,17 @@ ERROR_THRESHOLD = 2
 AREA_THRESHOLD = 1e3
 DILATION_SIZE = KERNEL_SIZE//2-1
 
+F_x = 2564.3186869 # px
+F_y = 2569.70273111 # px
+x_o = 5 # inches
+x_circle = 104.2163692827433
+z_o = F_x*x_o/x_circle
+
+
+def image_to_world(x_i, y_i):
+    x_o = z_o * x_i / F_x
+    y_o = z_o * y_i / F_y
+    return (x_o, y_o)
 
 # from plane_fit.ipynb
 # add a dilation step to fix the kernel clipping on sides
@@ -120,8 +131,12 @@ def annotate(img, contours, status=None):
         if point is None:
             continue
         cv2.drawMarker(vis, point, CENTER, cv2.MARKER_CROSS, 16, 2, cv2.LINE_AA)
-        _text(vis, f"({point[0]}, {point[1]})",
-              (point[0] + 12, point[1] - 12), 0.5, CENTER)
+
+        x_i, y_i = point[0], point[1]
+        x_o, y_o = image_to_world(x_i, y_i)
+        
+        _text(vis, f"({x_o:.1f}, {y_o:.1f}, {z_o:.1f})",
+              (x_i + 12, y_i - 12), 0.5, CENTER)
     if status:
         _text(vis, status, (12, 34), 0.7, STATUS)
     return vis
@@ -131,7 +146,7 @@ def _text(img, s, origin, scale, color):
     # Black pass first, so text stays readable over bright shapes and dark
     # background alike.
     cv2.putText(img, s, origin, FONT, scale, (0, 0, 0), 3, cv2.LINE_AA)
-    cv2.putText(img, s, origin, FONT, scale, color, 1, cv2.LINE_AA)
+    cv2.putText(img, s, origin, FONT, scale, color, 3, cv2.LINE_AA)
 
 
 def main():
