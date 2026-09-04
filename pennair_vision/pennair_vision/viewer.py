@@ -1,6 +1,7 @@
 import cv2
 import rclpy
 from cv_bridge import CvBridge
+from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
 from sensor_msgs.msg import Image
 
@@ -12,6 +13,8 @@ class Viewer(Node):
         super().__init__('viewer')
         self.bridge = CvBridge()
         self.create_subscription(Image, 'image_annotated', self.show, 10)
+        cv2.namedWindow('pennair', cv2.WINDOW_NORMAL)
+        cv2.resizeWindow('pennair', 640, 360)
 
     def show(self, msg):
         cv2.imshow('pennair', self.bridge.imgmsg_to_cv2(msg, 'bgr8'))
@@ -23,7 +26,7 @@ def main(args=None):
     node = Viewer()
     try:
         rclpy.spin(node)
-    except (KeyboardInterrupt, rclpy.executors.ExternalShutdownException):
+    except (KeyboardInterrupt, ExternalShutdownException):
         pass
     finally:
         node.destroy_node()

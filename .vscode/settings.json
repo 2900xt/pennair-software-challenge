@@ -1,0 +1,7 @@
+{
+  "python.defaultInterpreterPath": "${userHome}/micromamba/envs/ros2_jazzy/bin/python",
+  "python.analysis.extraPaths": [
+    "${userHome}/micromamba/envs/ros2_jazzy/lib/python3.12/site-packages",
+    "${workspaceFolder}/pennair_vision"
+  ]
+}

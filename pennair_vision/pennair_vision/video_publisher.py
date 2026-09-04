@@ -13,8 +13,8 @@ class VideoPublisher(Node):
         self.declare_parameter('video_path', 'PennAir 2024 App Dynamic.mp4')
         self.declare_parameter('fps', 30.0)
 
-        video_path = self.get_parameter('video_path').value
-        fps = self.get_parameter('fps').value
+        video_path = self.get_parameter('video_path').get_parameter_value().string_value
+        fps = self.get_parameter('fps').get_parameter_value().double_value
 
         self.cap = cv2.VideoCapture(video_path)
         if not self.cap.isOpened():

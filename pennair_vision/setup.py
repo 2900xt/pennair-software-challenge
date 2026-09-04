@@ -16,10 +16,7 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='taha',
-    maintainer_email='tahakazim08@gmail.com',
-    description='PennAir shape-detection pipeline over a ROS 2 image stream.',
-    license='MIT',
+    description='idk what to put here',
     entry_points={
         'console_scripts': [
             'video_publisher = pennair_vision.video_publisher:main',
