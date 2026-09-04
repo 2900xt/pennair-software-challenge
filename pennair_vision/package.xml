@@ -3,9 +3,9 @@
 <package format="3">
   <name>pennair_vision</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>PennAir shape-detection pipeline over a ROS 2 image stream.</description>
   <maintainer email="tahakazim08@gmail.com">taha</maintainer>
-  <license>TODO: License declaration</license>
+  <license>MIT</license>
 
   <depend>rclpy</depend>
   <depend>sensor_msgs</depend>
@@ -13,11 +13,6 @@
   <depend>cv_bridge</depend>
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_ros</exec_depend>
-
-  <test_depend>ament_copyright</test_depend>
-  <test_depend>ament_flake8</test_depend>
-  <test_depend>ament_pep257</test_depend>
-  <test_depend>python3-pytest</test_depend>
 
   <export>
     <build_type>ament_python</build_type>

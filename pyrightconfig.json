@@ -1,0 +1,10 @@
+{
+  "pythonVersion": "3.12",
+  "pythonPlatform": "Linux",
+  "venvPath": "/home/taha/micromamba/envs",
+  "venv": "ros2_jazzy",
+  "extraPaths": [
+    "/home/taha/micromamba/envs/ros2_jazzy/lib/python3.12/site-packages",
+    "pennair_vision"
+  ]
+}

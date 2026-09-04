@@ -7,7 +7,7 @@ package_name = 'pennair_vision'
 setup(
     name=package_name,
     version='0.0.0',
-    packages=find_packages(exclude=['test']),
+    packages=find_packages(),
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -18,17 +18,13 @@ setup(
     zip_safe=True,
     maintainer='taha',
     maintainer_email='tahakazim08@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
-    extras_require={
-        'test': [
-            'pytest',
-        ],
-    },
+    description='PennAir shape-detection pipeline over a ROS 2 image stream.',
+    license='MIT',
     entry_points={
         'console_scripts': [
             'video_publisher = pennair_vision.video_publisher:main',
             'detector = pennair_vision.detector:main',
+            'viewer = pennair_vision.viewer:main',
         ],
     },
 )
