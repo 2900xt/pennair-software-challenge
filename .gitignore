@@ -11,8 +11,7 @@ log/
 # Generated output
 out/
 
-# Challenge media -- large; the static PNG is committed, the videos are not
-*.mp4
+
 *.mov
 
 docs
