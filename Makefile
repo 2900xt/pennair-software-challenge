@@ -6,7 +6,7 @@
 ENV        := ros2_jazzy
 MAMBA      := micromamba run -n $(ENV)
 SOURCE_WS  := source install/setup.bash
-VIDEO      ?= PennAir 2024 App Dynamic.mp4
+VIDEO      ?= PennAir 2024 App Dynamic Hard.mp4
 
 .PHONY: build server viewer run stop clean
 
